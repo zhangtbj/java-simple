@@ -2,9 +2,6 @@ FROM maven:3-jdk-11-openj9
 
 # Install wget
 USER root
-RUN \
-  apt-get update && \
-  apt-get install -y wget
 
 # Copy the application into the image
 COPY . /app
@@ -12,8 +9,6 @@ WORKDIR /app
 
 # Create a vertx user
 RUN \
-  groupadd -g 1100 vertx && \
-  useradd -u 1100 -g vertx vertx && \
   mkdir /home/vertx && \
   chown -R vertx:vertx /home/vertx && \
   chown -R vertx:vertx /app
