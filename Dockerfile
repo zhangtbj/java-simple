@@ -1,6 +1,6 @@
 FROM maven:3-jdk-11-openj9
 
-USER root
+# USER root
 RUN \
 # Install wget
   apt-get update && \
