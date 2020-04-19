@@ -1,6 +1,7 @@
 FROM maven:3-jdk-11-openj9
 
 # USER root
+USER 0
 RUN \
 # Install wget
   apt-get update && \
@@ -16,6 +17,7 @@ COPY --chown=vertx:vertx . /app
 WORKDIR /app
 
 # USER vertx:vertx
+USER 1100
 
 RUN \
 # Debug information
