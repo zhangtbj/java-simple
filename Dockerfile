@@ -15,7 +15,7 @@ RUN \
 COPY --chown=vertx:vertx . /app
 WORKDIR /app
 
-USER vertx:vertx
+# USER vertx:vertx
 
 RUN \
 # Debug information
